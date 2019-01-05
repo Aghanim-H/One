@@ -8,7 +8,7 @@ a=3+2
 print(a)
 a=a+2
 print(a)
-# 从0开始学python-2.3 字符串与布尔
+# 从0开始学python-2.3 字符串与布尔值
 a="hello world"
 print(a)
 a="你好！世界"
