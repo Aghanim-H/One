@@ -102,7 +102,7 @@ print(a)
 a = 9*4
 print(a)
 a = 9/4  
-print(a)#在Python2.x和Python3.x中，除号（/）结果可能不一致，此处3系列为准
+print(a)  #在Python2.x和Python3.x中，除号（/）结果可能不一致，此处以3系列为准
 
 # 代码片段5
 a = 9%4
