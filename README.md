@@ -26,5 +26,7 @@
 ## 6.1、sublime repl插件安装后无法正常使用
 ## 6.2、sublime Text 3 Preferance 按钮为灰色
 ## 6.3、Sublime Text 3 install package无法正常安装
-### 6.3.1 install package时报错…………
-
+### 6.3.1 install package时的报错
+  - Package Control  There are no packages available for installation
+  ![](../../Users/shan/Desktop/屏幕快照\ 2019-01-12\ 上午11.15.53.png)
+  
