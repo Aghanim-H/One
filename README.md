@@ -29,4 +29,4 @@
 ### 6.3.1 install package时的报错
   - Package Control  There are no packages available for installation
   ![](../../Users/shan/Desktop/屏幕快照\ 2019-01-12\ 上午11.15.53.png)
-  
+    - 原因分析：官方提供的Package Control不能用
