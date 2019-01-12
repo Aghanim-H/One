@@ -22,7 +22,7 @@
 -------- | --------
 截取全屏  | <kbd>Command</kbd> + <kbd>shift</kbd> + </kbd>3</kbd>
 截取自定义范围屏幕  | <kbd>Command</kbd> + <kbd>shift</kbd> + </kbd>4</kbd>
-截取当前活动窗口  | <kbd>Command</kbd> + <kbd>shift</kbd> + </kbd>4</kbd> + </kbd>空格键</kbd>  
+截取当前活动窗口  | <kbd>Command</kbd> + <kbd>shift</kbd> + </kbd>4</kbd> + </kbd>space</kbd>  
 ## 2、设置
 # 五、问题集
 ## 1、sublime repl插件安装后无法正常使用
