@@ -21,7 +21,12 @@
 截取全屏  | <kbd>Command</kbd> + <kbd>shift</kbd> + <kbd>3</kbd>
 截取自定义范围屏幕  | <kbd>Command</kbd> + <kbd>shift</kbd> + <kbd>4</kbd>
 截取当前活动窗口  | <kbd>Command</kbd> + <kbd>shift</kbd> + <kbd>4</kbd> + <kbd>space</kbd>  
-## 2、Mac设置
+## 5.2、Mac设置
+## 5.3、文件管理
+### 5.3.1 获取文件路径
+  - 鼠标右键点击文件，选择显示简介可以查看文件所在的目录，这和windows上点击路径兰结果一致，但使用起来不太方便，因为这只显示了文件所在目录的路径，文件的绝对路径还需要加上文件名
+  - 将文件拖入浏览器，文件路径会显示在地址栏
+  - 打开终端程序，将文件拖进去，路径会自动打印出来
 # 六、问题集
 ## 6.1、sublime repl插件安装后无法正常使用
 ## 6.2、sublime Text 3 Preferance 按钮为灰色
