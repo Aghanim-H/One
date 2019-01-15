@@ -61,16 +61,10 @@ print("开始上课了")
 
 score = input("请输入学生成绩：")
 
-
-
 # 必须得吧SublimeREPL给我搞定了  再继续
 # 他妈隔壁  找了无数文章  还是没找到解决办法  泪崩中
 # 只有更换pycharm使用了，没有办法，Sublime网站部分网页上不去
-
-
-
-
-
+print("hello world")
 
 
 
