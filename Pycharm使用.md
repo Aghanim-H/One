@@ -15,6 +15,17 @@
 ## 4、上传修改后的文件至Github
 - 先点击commit 然后VCS > Git > Push
 ## 5、快捷键
-- cmd+s 保存
-- cmd+delete 删除整行代码
+功能|快捷键
+|:----:|:----:|
+保存|<kbd>Command</kbd> + <kbd>S</kbd>
+删除整行代码|<kbd>Command</kbd> + <kbd>delete</kbd>
+打开最近访问过的文件|<kbd>Ctrl</kbd> + <kbd>E</kbd>
+打开最近编辑过的文件|<kbd>Ctrl</kbd> + <kbd>shift</kbd> + <kbd>E</kbd>
+万能搜索|连按两下 <kbd>shift</kbd>
+全局搜索关键字|<kbd>Ctrl</kbd> + <kbd>shift</kbd> + <kbd>F</kbd>
+全局替换|<kbd>Ctrl</kbd> + <kbd>shift</kbd> + <kbd>R</kbd>
+访问历史粘贴板|<kbd>Ctrl</kbd> + <kbd>shift</kbd> + <kbd>V</kbd>
+智能提示选择合适的操作|<kbd>alt</kbd> + <kbd>enter</kbd>
+任意位置另起一行|<kbd>shift</kbd> + <kbd>enter</kbd>
+
 # 三、调试
