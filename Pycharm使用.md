@@ -27,5 +27,6 @@
 访问历史粘贴板|<kbd>Ctrl</kbd> + <kbd>shift</kbd> + <kbd>V</kbd>
 智能提示选择合适的操作|<kbd>alt</kbd> + <kbd>enter</kbd>
 任意位置另起一行|<kbd>shift</kbd> + <kbd>enter</kbd>
-
+历史输入?|<kbd>alt</kbd> + <kbd>/</kbd>
+撤销|<kbd>command</kbd> + <kbd>Z</kbd>
 # 三、调试

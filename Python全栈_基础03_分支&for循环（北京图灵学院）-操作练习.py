@@ -78,6 +78,21 @@
 # 				·continue：无条件结束本次循环，从新进入下一轮循环
 # 				·pass：表示略过，通常用于占位，没有跳过功能
 # 				·见 代码片段7
+# 			while循环
+# 				·一个循环语句
+# 				·表示当某条件成立的时候，就循环
+# 				·不知道具体循环次数，但能确定循环的成立条件的时候用while循环
+# 				·语法1：
+# 					while 条件表达式：
+# 						语句块
+# 				·见 代码片段8
+# 				·语法2：另外一种表达方式
+# 					while 条件表达式：
+# 						语句块1
+# 					else：
+# 						语句块2
+# 				·见 代码片段9
+
 
 
 # 代码片段1
@@ -210,5 +225,24 @@ for i in range(1,11):
 	pass
 	print("wo zai zhe li")
 
+# 代码片段8
+# 如果年利率是6.7%复利，则多少年后本钱会翻倍
+benqian = 100000
+year = 0
+while benqian < 200000:
+	benqian = benqian * (1+0.067)
+	year += 1  # year = year + 1
+	print("第 {0}年拿了 {1} 块钱".format(year,benqian))
 
-
+# 代码片段9
+# 如果年利率是6.7%复利，则多少年后本钱会翻倍
+# 如果拿到的钱翻倍，则用print庆祝一下
+benqian = 100000
+year = 0
+while benqian < 200000:
+	benqian = benqian * (1+0.067)
+	year += 1  # year = year + 1
+	print("第 {0}年拿了 {1} 块钱".format(year,benqian))
+else:
+	print("你大爷的，终于翻倍了，10多年呀")
+	print("当年10万块可以盖个房子，现在儿子结婚，20万可以给他盖个厨房了")
