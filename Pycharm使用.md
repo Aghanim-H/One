@@ -29,5 +29,5 @@
 任意位置另起一行|<kbd>shift</kbd> + <kbd>enter</kbd>
 历史输入?|<kbd>alt</kbd> + <kbd>/</kbd>
 撤销|<kbd>command</kbd> + <kbd>Z</kbd>
-选择多行|<kbd>alt</kbd> + <kbd>PageUp</kbd> 或 <kbd>PageDown</kbd>
+选择多行|<kbd>alt</kbd> + <kbd>↑</kbd> 或 <kbd>↓</kbd>
 # 三、调试

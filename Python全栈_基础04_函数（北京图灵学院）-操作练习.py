@@ -24,6 +24,8 @@
                 ·见 代码片段4
         ·参数的定义和使用
         ·见 代码片段2
+    ·查找函数帮助文档
+        ·见 代码片段5
 """
 
 # 代码片段1
@@ -61,6 +63,23 @@ def hello(person):
 p = "东东"
 rst = hello(p)
 print(rst)
+
+# 九九乘法表
+# print函数默认任务打印完毕后换行
+for row in range(1,10):
+    for col in range(1,row+1):
+        #={2}等号之前留两个空格就对不齐，留其他个数的空格都能对齐？
+        print("{1}*{0}={2}".format(row,col,row*col),end="\t")
+    print()
+# 代码片段5
+# help(print)
+
+
+
+
+
+
+
 
 
 
