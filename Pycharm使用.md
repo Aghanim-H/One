@@ -17,8 +17,9 @@
 ## 5、快捷键
 功能|快捷键
 |:----:|:----:|
+注释|<kbd>Command</kbd> + <kbd>/</kbd>
 保存|<kbd>Command</kbd> + <kbd>S</kbd>
-删除整行代码|<kbd>Command</kbd> + <kbd>delete</kbd>
+删除选中行整行|<kbd>Command</kbd> + <kbd>delete</kbd>
 打开最近访问过的文件|<kbd>Ctrl</kbd> + <kbd>E</kbd>
 打开最近编辑过的文件|<kbd>Ctrl</kbd> + <kbd>shift</kbd> + <kbd>E</kbd>
 万能搜索|连按两下 <kbd>shift</kbd>
@@ -30,4 +31,7 @@
 历史输入?|<kbd>alt</kbd> + <kbd>/</kbd>
 撤销|<kbd>command</kbd> + <kbd>Z</kbd>
 选择多行|<kbd>alt</kbd> + <kbd>↑</kbd> 或 <kbd>↓</kbd>
+大写变小写|<kbd>command</kbd> + <kbd>shift</kbd> + <kbd>U</kbd>
+使用网页搜索选中的字|<kbd>command</kbd> + <kbd>shift</kbd> + <kbd>L</kbd>
+替换|<kbd>Command</kbd> + <kbd>R</kbd>
 # 三、调试
