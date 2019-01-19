@@ -87,6 +87,52 @@
                 ·见 代码片段4
             ·返回值示例
                 ·见 代码片段12
+    ·函数的作用域
+        ·变量作用域
+            ·变量有作用范围限制
+            ·分类：按照作用域分类
+                ·全局（global）：在函数外部定义
+                ·局部（local）：在函数内部定义
+            ·变量的作用范围：
+                ·全局变量：在整个全局范围都有效，全局变量在局部可以使用，即函数内部可以访问函数外部定义的变量
+                ·局部变量：在局部范围可以使用，局部变量在全局范围无法使用
+            ·LEGB原则：
+                ·L（local）：局部作用域
+                ·E（enclosing function locale）：外部嵌套函数作用域
+                ·G（global module）：函数定义所在模块作用域
+                ·B（buildin）：python内置模块的作用域
+                ·总结：里边访问外边可以，外边访问里面不可以
+        ·见 代码片段14
+            ·提升局部变量为全局变量
+                ·使用global
+                ·见 代码片段15
+            ·globals，locals函数
+                ·可以通过globals和locals显示出全局变量和局部变量
+                ·globals和locals函数叫内建函数
+                ·见 代码片段16
+            ·eval()函数
+                ·把一个字符串当成一个表达式来执行，返回表达式执行后的结果
+                ·语法：
+                    eval（string_code,globals=None,locals=None）
+                ·见 代码片段17
+            ·exec（）函数
+                ·跟eval功能类似，但是不返回结果
+                ·语法：
+                    exec（string_code，globals=None，locals=None）
+                ·见 代码片段18
+    ·递归函数
+        ·函数直接或者间接调用自身
+        ·优点：间接，理解容易
+        ·缺点：对递归深度有限制，消耗资源大
+        ·python对递归深度有限制，超过限制报错
+        ·在写递归程序的时候，一定要注意结束条件
+        ·见 代码片段19
+        ·斐波那契例子
+            ·一列数字，第一个值是1，第二个值也是1，从第三个开始，每一个数字的值等于前两个数字的值的和
+            ·公式：f（1）=1，f（2）=1，f（n）=f（n-2）+f（n-1）
+            ·如：1，1，2，3，5，8，13，……
+            ·见 代码片段20
+        ·汉诺塔例子
 # 函数文档
     ·函数的文档的作用是对当前函数提供使用相关的参考信息
     ·文档的写法：
@@ -273,3 +319,100 @@ def stu(name,age,*args):
 
 help(stu)
 print(stu.__doc__)  # 外层不加print，没起作用？？
+
+# 代码片段14
+a1 = 100
+def fun():
+    print(a1)
+    print("I am in fun")
+    a2 = 99  # a2的作用范围是fun
+    print(a2)
+
+print(a1)
+fun()
+# print(a2)  # 不可以，a2作用域限制为局部变量，报错：a2 is not defined
+
+# 代码片段15
+# def fun():
+#     global b1
+#     b1 = 100
+#     print(b1)
+#     print("I am in fun")
+#     b2 = 99  # b2的作用范围是fun
+#     print(b2)
+#
+# print(b1)
+# fun()
+# 报错，b1 is not defined
+
+def fun():
+    global b1
+    b1 = 100
+    print(b1)
+    print("我在函数里")
+    b2 = 99  # b2的作用范围是fun
+    print(b2)
+
+fun()
+# 为什么print（b1）出现在函数调用前面，则会报错？
+print(b1)
+
+# 代码片段16
+a = 1
+b = 2
+def fun(c,d):
+    e = 111
+    print("局部变量={0}".format(locals()))
+    print("全局变量={0}".format(globals()))
+
+fun(100,200)
+
+# 代码片段17
+x = 100
+y = 200
+z1 = x + y
+z2 = eval("x+y")
+print(z1)
+print(z2)
+
+# 代码片段18
+x = 3
+y = 7
+z1 = x + y
+z2 = exec("x+y")
+print(z1)
+print(z2)
+
+x = 8
+y = 12
+z1 = x + y
+z2 = exec("print('x+y:',x+y)")
+print(z1)
+print(z2)
+
+# 代码片段19
+# 递归调用深度限制代码
+# x = 0
+# def fun():
+#     global x
+#     x += 1
+#     print(x)
+#     fun()  # 函数自己调用自己
+#
+# fun()
+
+# 斐波那契数列
+# 下面求斐波那契数列函数有一定问题，比如n一开始就是负数，如何修正？
+def fib(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 1
+    return fib(n-2) + fib(n-1)  # 为什么此return能够正确执行而不用else语句
+
+print(fib(3))
+print(fib(10))
+
+
+
+
