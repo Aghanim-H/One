@@ -49,6 +49,16 @@
         ·关于列表的常用函数
             ·len：求列表长度
             ·list：将其他格式的数据转换成list
+            ·append：插入一个内容，在末尾添加
+            ·insert：指定位置插入，insert（index，data）：插入位置是index前面
+            ·del：删除，指定位置
+            ·pop：从对位拿出一个元素，即把最后一个元素拿出来
+            ·remove：在列表中删除指定的值的元素，如果被删除的值没在list中，则报错，即，删除list指定值得操作应该使用try……excepty语句，或者先行进行判断
+            ·clear：清空
+            ·reverse：翻转,原地翻转，id一样
+            ·extrnd：扩展列表，两个列表，把一个直接拼接到后一个上,id值不变
+            ·count：查找列表中指定值或元素的个数
+            ·copy：拷贝，浅拷贝
             ·见 代码片段13
     ·set
     ·dict
@@ -227,6 +237,51 @@ s = "I love wangxiaojing"
 print(list(s))  # list：转换为list
 
 print(list(range(12,19)))
+
+a = [ i for i in range(1,5)]
+print(a)
+a.append(100)
+print(a)
+a.insert(3,666)
+print(a)
+
+last_ele = a.pop()
+print(last_ele)
+print(a)
+
+print(a)
+print(id(a))
+a.remove(666)
+print(a)
+print(id(a))  # 输出两个id值一样，说明，remove操作是在原list直接操作
+
+print(a)
+print(id(a))
+a.clear()
+print(a)
+print(id(a))  # 如果不必id值不变，清空列表可以使用a = []
+
+a = [1,2,3,4,5]
+print(a)
+print(id(a))
+a.reverse()
+print(a)
+print(id(a))
+
+a = [1,2,3,4,5]
+b = [6,7,8,9,10]
+print(a)
+print(id(a))
+a.extend(b)
+print(a)
+print(id(a))
+
+a.append(8)
+a.insert(4,8)
+print(a)
+a_len = a.count(8)
+print(a_len)
+
 
 # 传值和传地址的区别
 # 对于简单的数值，采用传值操作，即在函数内对参数的操作不影响外面的变量
