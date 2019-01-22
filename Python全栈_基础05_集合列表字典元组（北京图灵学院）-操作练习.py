@@ -59,10 +59,16 @@
             ·extrnd：扩展列表，两个列表，把一个直接拼接到后一个上,id值不变
             ·count：查找列表中指定值或元素的个数
             ·copy：拷贝，浅拷贝
+                ·深拷贝与浅拷贝的区别
+                ·见 代码片段14
             ·见 代码片段13
     ·set
     ·dict
-    ·tuple
+    ·tuple：元组
+        ·元组可以看成是一个不可更改的list
+            ·元组创建
+            ·见 代码片段15
+            ·元组的特征特性
 '''
 
 # 代码片段1
@@ -281,6 +287,67 @@ a.insert(4,8)
 print(a)
 a_len = a.count(8)
 print(a_len)
+
+# 列表类型变量赋值示例，list类型，简单赋值操作，是传地址。为了解决上述问题，list赋值需要采用copy函数。
+a = [1,2,3,4,5,666]
+print(a)
+b = a
+b[3] = 777
+print(a)
+print(b)
+
+b = a.copy()
+print(a)
+print(id(a))
+print(b)
+print(id(b))
+print("*" * 30)
+b[3] = 888
+print(a)
+print(b)
+
+# 代码片段14
+# 出现下列问题的原因是，copy函数是个浅拷贝函数，即只拷贝一层内容
+# 深拷贝需要使用特定工具
+a = [1,2,3,[10,20,30]]
+b = a.copy()
+print(id(a))
+print(id(b))
+print(id(a[3]))
+print(id(b[3]))
+a[3][2] = 666
+print(a)
+print(b)
+
+# 代码片段15
+# 创建空元组
+t = ()
+print(type(t))
+# 创建一个只有一个值的元组
+t = (1,)  # 没有逗号为int
+print(type(t))
+print(t)
+t = 1,
+print(type(t))
+print(t)
+# 创建多个值的元组
+t = (1,2,3,4,5)
+print(type(t))
+print(t)
+t = 1,2,3,4,5
+print(type(t))
+print(t)
+# 使用其他结构创建
+l = [1,2,3,4,5]
+t = tuple(l)
+print(type(t))
+print(t)
+
+
+
+
+
+
 
 
 # 传值和传地址的区别
