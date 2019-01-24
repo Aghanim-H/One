@@ -65,8 +65,39 @@
     ·set：集合
         ·集合是高中数学中的一个概念
         ·一堆确定的无序的唯一的数据，集合中每一个数据成为一个元素
+        ·集合的特征
+            ·集合内数据无序，即无法使用索引和分片
+            ·集合内部数据元素具有唯一性，可以用来排除重复数据
+            ·集合内的数据，str，int，float，tuple，冰冻集合等，即内部只能放置可哈希数据
+            ·冰冻集合就是不可以进行任何修改的集合，frozen set是一种特殊的集合
+                ·见 代码片段20
+            ·集合遍历操作
+            ·集合的内涵
+        ·见 代码片段18
+        ·关于集合的函数
+            ·len，max，min：跟其他基本函数一致
+            ·见 代码片段19
     ·dict
-    ·tuple：元组
+        ·字典是一种组合数据，没有顺序的组合数据，数据以键值对形式出现
+            ·字典的创建
+            ·见 代码片段21
+            ·字典的特征
+                ·字典是序列类型，但是是无序序列，所以没有索引和分片
+                ·字典中的数据每个都有键值对组成，即kv对
+                    ·key：必须是可哈希的值，比如int，string，float，tuple，但是，list，set，dict不行
+                    ·value：任何值
+                ·字典常见操作
+                ·见 代码片段22
+                ·字典相关函数
+                    ·通用函数：len，max，min，dict
+                    ·str（字典）：返回字典的字符串格式
+                    ·clear：清空字典
+                    ·items：返回字典的键值对组成的元组格式
+                    ·key：返回字典的键组成的一个结构
+                    ·values：同理，返回字典的值组成的一个结构，是一个可迭代的结构
+                    ·get：根据指定键返回相应的值，get的好处是可以设置默认值
+                    ·formkeys：使用指定的序列作为键，使用一个值作为字典的所有的键的值
+                    ·见 代码片段23
         ·元组可以看成是一个不可更改的list
             ·元组创建
             ·见 代码片段15
@@ -443,6 +474,223 @@ print("*" * 10)
 a,b = b,a
 print(a)
 print(b)
+
+# 代码片段18
+# 集合的定义
+s = set()
+print(type(s))
+print(s)
+
+s = {1,2,3,4,5,6,7}  # 此时，大括号内一定要有值，否则定义出的是一个dict
+
+d = {}
+print(type(d))
+print(d)
+
+# 集合序列操作
+# 成员检测，in，not in
+s = {4,5,"i","love","wangxiaojing"}
+print(s)
+if "love" in s:
+    print("爱呀")
+if "haha" not in s:
+    print("爱个锤子")
+# 集合遍历操作
+s = {4,5,"i","love","wangxiaojing"}
+for i in s:
+    print(i,end=" ")
+# 带有元组的集合遍历
+s = {(1,2,3),("i","love","wangxiaojing"),(4,5,6)}
+for k,m,n in s:
+    print(k,"----",m,"----",n)
+for k in s:
+    print(k)
+# 集合的内涵
+# 普通集合内涵
+# 以下集合在初始化后自动过滤掉重复元素
+s = {23,223,545,3,1,2,3,4,3,2,3,1,2,4,3}
+print(s)
+
+ss = {i for i in s}
+print(ss)
+
+# 带条件的集合内涵
+sss = {i for i in s if i%2 == 0}
+print(sss)
+
+# 多循环的集合内涵
+s1 = {1,2,3,4}
+s2 = {"i","love","wangxiaojing"}
+s = {m*n for m in s2 for n in s1}
+print(s)
+
+s = {m*n for m in s2 for n in s1 if n == 2}
+print(s)
+
+# 代码片段19
+s = {43,23,56,223,4,2,1222,4,323,1}
+print(len(s))
+print(max(s))
+print(min(s))
+# set：生成一个集合
+l = [1,2,3,4,3,23,1,2,3,4]
+s = set(l)
+print(s)
+# add：向集合内添加元素
+s = {1}
+s.add(334)
+print(s)
+# clear。结果表明clear函数是原地清空数据
+s = {1,2,3,4,5}
+print(id(s))
+s.clear()
+print(id(s))
+# copy：拷贝
+# remove：移除指定的值，直接改变原有值，如果要删除的值不存在，报错
+# discard：移除集合中指定的值，跟remove一样，但是如果要删除的话，不报错
+s = {23,3,4,5,1,2,3}
+s.remove(4)
+print(s)
+s.discard(1)
+print(s)
+print("*" * 20)
+s.discard(1100)
+print(s)
+# s.remove(1100)  #报错，为啥remove不存在的值会报keyerror？因为哈希
+# print(s)  # 报错
+# pop：随机移除一个元素
+s = {1,2,3,4,5,6,7}
+d = s.pop()
+print(d)
+print(s)
+# intersection：交集
+# difference：差集
+# union：并集
+# issubset：检查一个集合是否为另一个子集
+# issuperset：检查一个集合是否为另一个超集
+s1 = {1,2,3,4,5,6}
+s2 = {5,6,7,8,9}
+s_1 = s1.intersection(s2)
+print(s_1)
+s_2 = s1.difference(s2)
+print(s_2)
+s_3 = s1.issubset(s2)
+print(s_3)
+# 集合的数学操作
+s1 = {1,2,3,4,5,6}
+s2 = {5,6,7,8,9}
+s_4 = s1 - s2
+print(s_4)
+
+# 代码片段20
+# frozen set:冰冻集合
+s = frozenset()
+print(type(s))
+print(s)
+
+# 代码片段21
+# 创建空字典
+d = {}
+print(d)
+
+d = dict()
+print(d)
+
+# 创建有值得字典，每组数据用冒号隔开，每一对键值对用逗号隔开
+d = {"one":1,"two":2,"three":3}
+print(d)
+# 用dict创建有内容字典1
+d = dict({"one":1,"two":2,"three":3})
+print(d)
+# 用dict创建有内容字典2
+# 利用关键字参数
+d = dict(one=1,two=2,three=3)
+print(d)
+
+d = dict([("one",1),("two",2),("three",3)])
+print(d)
+
+# 代码片段22
+# 访问数据
+d = {"one":1,"two":2,"three":3}
+# 注意访问格式
+# 中括号内是键值
+print(d["one"])
+d["one"] = "dmdmfm"
+print(d)
+
+# 删除某个操作，使用del操作
+del d["one"]
+print(d)
+
+# 成员检测，in，not in。成员检测检测的是key内容
+d = {"one":1,"two":2,"three":3}
+if 2 in d:
+    print("value")
+if "two" in d:
+    print("key")
+if ("two",2) in d:
+    print("kv")
+
+# 遍历在python 2 和python 3 中区别比较大，代码不适用
+# 按key来使用for循环，直接按key值访问
+d = {"one":1,"two":2,"three":3}
+for k in d:
+    print(k,d[k])
+# 上述代码可以改写如下：
+for k in d.keys():
+    print(k,d[k])
+# 只访问字典的值
+for v in d.values():
+    print(v)
+# 还可以这样写，注意此种为特殊用法
+for k,v in d.items():
+    print(k,"----",v)
+
+# 字典生成式
+d = {"one":1,"two":2,"three":3}
+# 常规字典生成式
+dd = {k:v for k,v in d.items()}
+print(dd)
+# 加限制条件的字典生成式
+dd = {k:v for k,v in d.items() if v%2 == 0}
+print(dd)
+
+# 代码片段23
+d = {"one":1,"two":2,"three":3}
+print(str(d))
+
+i = d.items()
+print(type(i))
+print(i)
+
+k = d.keys()
+print(type(k))
+print(k)
+
+v = d.values()  # 注意是values而不是value！
+print(type(v))
+print(v)
+
+# get默认值是None，可以设置
+d = {"one":1,"two":2,"three":3}
+print(d.get("on33"))
+print(d.get("one",100))
+print(d.get("on333",100))
+# print(d["on33"])  # 报错
+
+# formkeys
+# 注意formkeys的两个参数的类型
+# 注意fromkeys的调用主体
+l = ["eins","zwei","dree"]
+d = dict.fromkeys(l,"hahahahhahaaaa")
+print(d)
+
+
+
+
+
+
 
 
 # 传值和传地址的区别
