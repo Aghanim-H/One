@@ -25,3 +25,73 @@ print(yueyue.name)
 print(yueyue.age)
 # 注意成员函数的调用没有传递进入参数
 yueyue.doHomework()
+
+class Student():
+    name = "dana"
+    age = 18
+Student.__dict__
+# 实例化
+yueyue = Student()
+yueyue.__dict__
+print(yueyue.name)
+
+class A():
+    name = "dana"
+    age = 18
+    # 注意say的写法，参数有一个self
+    def say(self):
+        self.name = "aaaa"
+        self.age = 200
+# 此案例说明，类实例的属性和其对象的实例的属性在不对对象的实例属性赋值的前提下，指向同一个变量
+# 此时，A称为类实例
+print(A.name)
+print(A.age)
+print("*" * 20)
+# id可以鉴别一个变量是否和另一个变量是同一变量
+print(id(A.name))
+print(id(A.age))
+print("*" * 20)
+a = A()
+print(a.name)
+print(a.age)
+print(id(a.name))
+print(id(a.age))
+
+print(A.name)
+print(A.age)
+print("*" * 20)
+print(id(A.name))
+print(id(A.age))
+print("*" * 20)
+a = A()
+print(A.__dict__)
+print(a.__dict__)
+a.name = "yaona"
+a.age = 16
+print(a.__dict__)
+print(a.name)
+print(a.age)
+print(id(a.name))
+print(id(a.age))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
