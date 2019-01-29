@@ -156,29 +156,155 @@ print(Person.__dict__)
 p._Person__age = 19
 print(p._Person__age)
 
+# 代码片段6
+# 继承的语法
+# 在python中，任何类都有一个共同的父类叫object
+class Person():
+    name = "NoName"
+    age = 0
+    def sleep(self):
+        print("Sleeping …… ……")
+# 父类写在括号内
+class Teacher(Person):
+    def make_test(self):
+        pass
 
+t = Teacher()
+print(t.name)
+print(Teacher.name)
 
+class person():
+    name = "NoName"
+    age = 0
+    __score = 0  # 考试成绩是秘密，只要自己知道
+    _petname = "sec"  # 小名，是保护的，子类可以用，但不能公用
+    def sleep(self):
+        print("Sleeping …… ……")
+# 父类写在括号内
+class Teacher(Person):
+    teacher_id = "9527"
+    def make_test(self):
+        print("attention")
 
+t = Teacher()
+print(t.name)
+# 受保护不能外部访问，为啥这里可以
+# print(t._petname)
+# 私有访问问题，公开访问私有变量，报错
+# print(t.__score)
 
+t.sleep()
+print(t.teacher_id)
+t.make_test()
 
+# 子类和父类定义了同一个名称变量，则优先使用子类本身的变量
+class person():
+    name = "NoName"
+    age = 0
+    __score = 0
+    _petname = "sec"
+    def sleep(self):
+        print("Sleeping …… ……")
+class Teacher(Person):
+    teacher_id = "9527"
+    name = "Dana"
+    def make_test(self):
+        print("attention")
+t = Teacher()
+print(t.name)
 
+# 子类扩充父类功能的案例
+# 人有工作的函数，老师也有工作的函数，但老师的工作需要讲课
+class Person():
+    name = "NoName"
+    age = 0
+    __score = 0
+    _petname = "sec"
+    def sleep(self):
+        print("Sleeping …… ……")
+    def work(self):
+        print("make some money")
+class Teacher(Person):
+    teacher_id = "9527"
+    name = "Dana"
+    def make_test(self):
+        print("attention")
+    def work(self):
+        # 扩充父类的功能只需要调用父类相应的函数
+        # Person.work(self)  # 方法一，注意需传入一个参数，这里传入的为self
+        super().work()  # 方法二，super代表得到父类
+        self.make_test()
+t = Teacher()
+t.work()
 
+# 构造函数的概念
+# __init__就是构造函数，每次实例化的时候，第一个被自动调用，因为主要工作是进行初始化，所以得名
+class Dog():
+    def __init__(self):
+        print("I am init in dog")
+# 实例化的时候，括号内的参数需要跟构造函数参数匹配
+kaka = Dog()
 
+# 继承中的构造函数1
+class Animal():
+    pass
+class PaxinAni(Animal):
+    pass
+class Dog(PaxinAni):
+    def __init__(self):
+        print("I am init in dog")
+# 实例化的时候，自动调用了Dog的构造函数
+kaka = Dog()
 
+# 继承中的构造函数2
+class Animal():
+    def __init__(self):
+        print("Animal")
+class PaxinAni(Animal):
+    def __init__(self):
+        print("Paxing Dongwu")
+class Dog(PaxinAni):
+    def __init__(self):
+        print("I am init in dog")
+# 实例化的时候，自动调用了Dog的构造函数,因为找到了构造函数，则不再查找父类的构造函数
+kaka = Dog()
+# 猫没有写构造函数
+class Cat(PaxinAni):
+    pass
+# 此时应该自动调用构造函数，因为Cat没有构造函数，所以查找父类构造函数,在PaxingAni中查到了构造函数，则停止向上查找
+c = Cat()
 
+# 继承中的构造函数3
+class Animal():
+    def __init__(self):
+        print("Animal")
+class PaxinAni(Animal):
+    def __init__(self,name):
+        print("Paxing Dongwu {0}".format(name))
+class Dog(PaxinAni):
+    def __init__(self):
+        print("I am init in dog")
+d = Dog()  # 实例化Dog时，查找到Dog的构造函数，参数匹配，不报错
+# class Cat(PaxinAni):
+#     pass
+# c = Cat()  # 此时，由于Cat没有构造函数，则向上查找。因为PaxinAni的构造函数需要两个参数，实例化的时候只给了一个，报错
 
+# 继承中的构造函数4
+class Animal():
+    def __init__(self):
+        print("Animal")
+class PaxinAni(Animal):
+    pass
+class Dog(PaxinAni):
+    pass
+d = Dog()
+class Cat(PaxinAni):
+    pass
+c = Cat()
 
-
-
-
-
-
-
-
-
-
-
-
+# super是一个类
+print(type(super))
+help(super)
 
 
 
