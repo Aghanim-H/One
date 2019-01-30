@@ -4,16 +4,26 @@
 ## 3、安装过程中的设置
 # 二、使用
 ## 1、设置
+### 1.1 主题设置
+- 系统自带主题设置
+    -Pycharm --> Preferences --> Editor --> Color Scheme 
+- 网络下载主题设置
+    - Pycharm --> Preferences --> Editor --> Color Scheme --> 点击齿轮 --> Import Scheme --> 点击选择需要安装的主题包 --> 点击Open
 ## 2、新建工程
-## 3、新建文件
-### 3.1 新建.py文件
+## 3、文件及文件夹
+### 3.1 查看Pycharm在Mac中的安装文件夹
+- 打开Finder --> 打开Library或者资源库 --> 打开Preferences --> 打开PyCharm2018.3
+### 3.2 查看工程项目位置
+- 打开Finder --> 点击用户 --> 点击shan --> 点击PycharmProjects
+### 3.3 新建文件
+#### 3.3.1 新建.py文件
 - 右键 > New > Python File > 输入想要的文件名 > OK
 ![1](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New.png#pic_center)![2](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New_Python%20File.png)![3](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New_Python%20File_.png)
-### 3.2 新建.md文件
+#### 3.3.2 新建.md文件
 - 右键 > New > File > 输入想要的文件名.md > OK
 ![1](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New.png)![2](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New_File.png)![3](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New_File_.png)
 ## 4、上传修改后的文件至Github
-- 先点击commit 然后VCS > Git > Push
+- 先点击commit 然后VCS --> Git --> Push
 ## 5、快捷键
 功能|快捷键
 |:----:|:----:|
