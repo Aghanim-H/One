@@ -306,6 +306,243 @@ c = Cat()
 print(type(super))
 help(super)
 
+class A():
+    pass
+class B():
+    pass
+print(A.__mro__)
+print(B.__mro__)
+
+# 代码片段7
+# 多继承的例子，子类可以直接拥有父类的属性
+class Fish():
+    def __init__(self,name):
+        self.name = name
+    def swim(self):
+        print("i am swiming…………")
+class Bird():
+    def __init__(self,name):
+        self.name = name
+    def fly(self):
+        print("I am flying…………")
+class Person():
+    def __init__(self,name):
+        self.name = name
+    def work(self):
+        print("Working…………")
+# 单继承的例子
+class Student(Person):
+    def __init__(self,name):
+        self.name = name
+stu = Student("yueyue")
+stu.work()
+# 多继承的例子
+class SuperMan(Person,Bird,Fish):
+    def __init__(self,name):
+        self.name = name
+class SwimMan(Person,Fish):
+    def __init__(self,name):
+        self.name = name
+s = SuperMan("chaoren")
+s.fly()
+s.swim()
+
+# 菱形继承问题
+class A():
+    pass
+class B():
+    pass
+class C():
+    pass
+class D(B,C):
+    pass
+
+# 代码片段8
+# 构造函数例子
+class Person():
+    # 对Person类进行实例化的时候
+    # 姓名要确定
+    # 年龄得确定
+    # 地址肯定有
+    def __init__(self):
+        self.name = "Noname"
+        self.age = 18
+        self.address = "Street 123455"
+        print("In init func")
+# 实例化一个人
+p = Person()
+# 构造函数的调用顺序1
+# 如果子类没有写构造函数，则自动向上查找，直到找到位置
+class A():
+    def __init__(self):
+        print("A")
+class B(A):
+    def __init__(self):
+        print("B")
+class C(B):
+    pass
+# 此时，首先查找C的构造函数，如果没有，则向上按照MRO顺序查找父类的构造函数，直到找到为止
+c = C()
+# 构造函数的调用顺序2
+class A():
+    def __init__(self):
+        print("A")
+class B(A):
+    def __init__(self,name):
+        print("B")
+        print(name)
+class C(B):
+    pass
+# c = C()  # 此时会出现参数结构不对应错误，缺少一个参数
+# 构造函数的调用顺序3
+class A():
+    def __init__(self):
+        print("A")
+class B(A):
+    def __init__(self,name):
+        print("B")
+        print(name)
+class C(B):
+    # C中想扩展B的构造函数，即调用B的构造函数后再添加一些功能
+    # 有两种方法实现，第一种：通过父类名调用
+    def __init__(self,name):
+        # 首先调用父类构造函数
+        B.__init__(self,name)
+        #其次，再增加自己的功能
+        print("这是C中附加的功能")
+c = C("我是C")
+
+class A():
+    def __init__(self):
+        print("A")
+class B(A):
+    def __init__(self,name):
+        print("B")
+        print(name)
+class C(B):
+    # C中想扩展B的构造函数，即调用B的构造函数后再添加一些功能
+    # 有两种方法实现，第二种：使用super调用
+    def __init__(self,name):
+        # 首先调用父类构造函数
+        super(C,self).__init__(name)
+        #其次，再增加自己的功能
+        print("这是使用super函数实现的C中附加的功能")
+c = C("我是C")
+
+# 代码片段9
+# Mixin案例
+class Person():
+    name = "liuying"
+    age = 18
+    def eat(self):
+        print("Eat…………")
+    def drink(self):
+        print("Drink…………")
+    def sleep(self):
+        print("Sleep…………")
+class Teacher(Person):
+    def work(self):
+        print("Working…………")
+class Student(Person):
+    def study(self):
+        print("Studying…………")
+class Tutor(Teacher,Student):
+    pass
+t = Tutor()
+print(Tutor.__mro__)  # 打印MRO列表
+print(t.__dict__)
+print(Tutor.__dict__)
+print("*" * 20)
+class TeacherMixin():
+    def work(self):
+        print("working work work")
+class StudentMixin():
+    def study(self):
+        print("studying study study study")
+class TutorM(Person,TeacherMixin,StudentMixin):
+    pass
+tt = TutorM()
+print(TutorM.__mro__)
+print(tt.__dict__)
+print(TutorM.__dict__)
+
+# 代码片段10
+# issubclass案例
+class A():
+    pass
+class B(A):
+    pass
+class C():
+    pass
+print(issubclass(B,A))
+print(issubclass(C,A))
+print(issubclass(B,object))
+# isinstance案例
+class A():
+    pass
+a = A()
+print(isinstance(a,A))
+print(isinstance(A,A))
+# hasattr案例
+class A():
+    name = "Noname"
+a = A()
+print(hasattr(a,"name"))
+print(hasattr(a,"age"))
+# help案例
+# 我想知道setattr的具体用法
+help(setattr)
+# dir案例
+class A():
+    pass
+# dir(A)
+a = A()
+print(dir(a))
+
+# 代码片段11
+# 属性案例
+# 创建Student类，描述学生类，学生具有Student.name属性，单name格式并不统一
+# 可以增加一个函数，然后自动调用的方式，但很蠢
+class Student():
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+        # 如果不想修改代码
+        self.setName(name)
+    def intro(self):  # 介绍下自己
+        print("Hi,my name is {0}".format(self.name))
+    def setName(self,name):
+        self.name = name.upper()
+s1 = Student("LIUYING",19)
+s2 = Student("michi stangle",24)
+s1.intro()
+s2.intro()
+# property案例
+# 定义一个Person类，具有name，age属性
+# 对于任意输入的姓名，我们希望都用大写方式保存
+# 年龄，我们希望内部统一用整数保存
+# x = property（fget，fset，fdel，doc）
+class Person():
+    # 函数的名称可以任意
+    def fget(self):
+        return self._name * 2
+    def fset(self,name):
+        # 所有输入的姓名以大写形式保存
+        self._name = name.upper()
+    def fdel(self):
+        self._name = "NoName"
+    name = property(fget,fset,fdel,"对name进行下操作啦")
+p1 = Person()
+p1._name = "TuLing"
+print(p1.name)
+# 作业
+# 1、在用户输入年龄的时候，可以输入整数，小数，浮点数
+# 2、但内部为了数据清洁，我们统一需要保存整数，直接舍去小数点
+
+
+
+
+
 
 
 
