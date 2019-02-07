@@ -538,7 +538,7 @@ class Person():
         self._name = "NoName"
     name = property(fget,fset,fdel,"对name进行下操作啦")
 p1 = Person()
-p1._name = "TuLing"  # 执行后没有大写起，有问题待查？？？
+p1.name = "TuLing"  # 执行后没有大写起，有问题待查？？？错误在于name前面不该多加了一个下划线
 print(p1.name)
 # 作业
 # 1、在用户输入年龄的时候，可以输入整数，小数，浮点数
@@ -548,6 +548,129 @@ print(p1.name)
 # 类的内置属性案例
 print(Person.__dict__)
 print(Person.__doc__)
+print(Person.__name__)
+print(Person.__bases__)
+
+# 代码片段13
+# init举例
+class A():
+    def __init__(self,name = 0):
+        print("哈哈，我被调用了")
+a = A()
+# __call__举例
+class A():
+    def __init__(self,name = 0):
+        print("哈哈，我在call例子中被调用了")
+    def __call__(self):
+        print("嘿嘿，我是call函数，现在被调用了")
+a = A()
+a()
+# __str__举例
+class A():
+    def __init__(self,name = 0):
+        print("哈哈，我在str例子中被调用了")
+    def __call__(self):
+        print("嘿嘿，我是call函数，现在str例子中被调用了")
+    def __str__(self):
+        return "str的例子例子例子例子"
+a = A()
+print(a)
+# __getattr__例子
+class A():
+    name = "Noname"
+    age = 18
+    def __getattr__(self,name):
+        print("没找到呀没找到呀,这个属性不存在,没有定义")
+        print(name)
+a = A()
+print(a.name)
+print(a.addr)
+# 作业：为什么会打印出来四句话，而且第四句话是打印的none？
+# __setattr__案例
+class Person():
+    def __init__(self):
+        pass
+    def __setattr__(self,name,value):
+        print("设置属性：{0}".format(name))
+        # self.name = value  # 词句会导致问题，死循环
+        # 此种情况，为了避免死循环，规定统一调用父类魔法函数
+        super().__setattr__(name,value)
+p = Person()
+print(p.__dict__)
+p.age = 18
+# __gt__举例
+class Student():
+    def __init__(self,name):
+        self.name = name
+    def __gt__(self,obj):
+        print("哈哈，{0} 会比 {1} 大吗？".format(self,obj))
+        return self.name > obj.name  # 为什么老师用的jupyter笔记本，他的代码name前面加了一个下划线也不会报错
+# 作业：字符串的比较是按什么规则
+stu1 = Student("one")
+stu2 = Student("two")
+print(stu1 > stu2)
+# 作业：下面显示结果不太美观，能否改成形如，"哈哈，one会比two大吗？"
+
+# 代码片段14
+# 三种方法的案例
+class Person:
+    # 实例方法
+    def eat(self):
+        print(self)
+        print("Eating…………")
+    # 类方法，类方法的第一个参数，一般命名为cls，区别于self
+    @classmethod
+    def play(cls):
+        print(cls)
+        print("playing…………")
+    # 静态方法，不需要用第一个参数表示自身或者类
+    @staticmethod
+    def say():
+        print("Saying…………")
+yueyue = Person()
+# 实例方法
+yueyue.eat()
+# 类方法
+Person.play()
+yueyue.play()  # 用实例调用类方法
+# 静态方法
+Person.say()
+yueyue.say()  # 用实例调用静态方法
+# 作业：自行查找三种方法内存使用方面的区别
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
