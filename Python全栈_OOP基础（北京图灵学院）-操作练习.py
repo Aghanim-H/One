@@ -523,6 +523,11 @@ s2.intro()
 # 年龄，我们希望内部统一用整数保存
 # x = property（fget，fset，fdel，doc）
 class Person():
+    """
+    这是一个人，一个高尚的人，一个脱离了低级趣味的人
+    他还他妈的有属性
+    这段文字属于说明文档
+    """
     # 函数的名称可以任意
     def fget(self):
         return self._name * 2
@@ -533,14 +538,16 @@ class Person():
         self._name = "NoName"
     name = property(fget,fset,fdel,"对name进行下操作啦")
 p1 = Person()
-p1._name = "TuLing"
+p1._name = "TuLing"  # 执行后没有大写起，有问题待查？？？
 print(p1.name)
 # 作业
 # 1、在用户输入年龄的时候，可以输入整数，小数，浮点数
 # 2、但内部为了数据清洁，我们统一需要保存整数，直接舍去小数点
 
-
-
+# 代码片段12
+# 类的内置属性案例
+print(Person.__dict__)
+print(Person.__doc__)
 
 
 
