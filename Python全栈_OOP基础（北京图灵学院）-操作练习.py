@@ -710,15 +710,68 @@ class Huaman(metaclass = abc.ABCMeta):
     def sleep(self):
         print("Sleeping…………")
 
-
-
-
-
-
-
-
-
-
+# 代码片段16
+# 函数名本身可以当变量使用
+def sayHello(name):
+    print("{0}你好，来一发吗？".format(name))
+sayHello("月月")
+liumang = sayHello
+liumang("yueyue")
+# 自己组装一个类
+class A():
+    pass
+def say(self):
+    print("saying…………")
+class B():
+    def say(self):
+        print("SSSaying…………")
+say(9)
+A.say = say
+a = A()
+a.say()
+b = B()
+b.say()
+# 组装类例子2
+from types import MethodType
+class A():
+    pass
+def say(self):
+    print("saying…………")
+a =A()
+a.say = MethodType(say,A)
+a.say()
+help(MethodType)
+type(9)
+help(type)
+# 利用type造一个类
+# 先定义类应该具有的成员函数
+def say(self):
+    print("saying…………")
+def talk(self):
+    print("Talking…………")
+# 用type来创建一个类
+A = type("AName",(object,),{"class_say":say,"class_talk":talk})
+# 然后可以像正常访问一样使用类
+a = A()
+dir(a)
+a.class_say()
+a.class_talk()
+# 元类演示
+# 元类写法是固定的，它必须继承自type
+# 元类一般命名以MetaClass结尾
+class TulingMetaClass(type):
+    # 注意以下写法
+    def __new__(cls,name,bases,attrs):
+        # 自己的业务处理
+        print("哈哈，我是元类呀")
+        attrs["id"] = "000000"
+        attrs["addr"] = "北京市海定区lllllll"
+        return type.__new__(cls,name,bases,attrs)
+# 元类定义完就可以使用，使用注意写法
+class Teacher(object,metaclass = TulingMetaClass):
+    pass
+t = Teacher()
+t.id
 
 
 
