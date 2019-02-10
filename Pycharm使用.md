@@ -29,6 +29,8 @@
 |:----:|:----:|
 注释|<kbd>Command</kbd> + <kbd>/</kbd>
 保存|<kbd>Command</kbd> + <kbd>S</kbd>
+缩进|<kbd>tab</kbd>
+退缩进|<kbd>shift</kbd> + <kbd>tab</kbd>
 删除选中行整行|<kbd>Command</kbd> + <kbd>delete</kbd>
 打开最近访问过的文件|<kbd>Ctrl</kbd> + <kbd>E</kbd>
 打开最近编辑过的文件|<kbd>Ctrl</kbd> + <kbd>shift</kbd> + <kbd>E</kbd>
