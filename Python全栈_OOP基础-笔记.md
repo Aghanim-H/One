@@ -50,9 +50,9 @@
     - 见 操作练习：代码片段1 
 - 可以通过默认内置变量检查类和对象的所有成员
     - 对象所有成员检查
-        obj.__dict__  # dict前后各有两个下划线
+        `obj.__dict__  # dict前后各有两个下划线`
     - 类所有的成员
-        class_name.__dict__  # dict前后各有两个下划线
+        `class_name.__dict__  # dict前后各有两个下划线`
     - 见 操作练习：代码片段2
 # 三、Anaconda基本使用
 - Anaconda主要是一个虚拟环境管理器
@@ -94,11 +94,13 @@
 - 私有
     - 私有成员是最高级别的封装，只能在当前类或对象中访问
     - 在成员前面添加两个下划线即可
+        ```
         class Person（）：
             # name是共有的成员
             name = "liuying"
             # __age就是私有成员
             __age = 18
+        ```
     - Python的私有不是真私有，是一种称为name mangling（障眼法）的改名策略，可以使用 对象._classname_attributename 访问
 - 受保护的封装 protected
     - 受保护的封装是将对象成员进行一定级别的封装，然后，在类中或者子类中都可以进行访问，但是在外部不可以
