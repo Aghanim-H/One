@@ -14,12 +14,12 @@
     - 直接导入模块使用
         - 加入模块名称直接以数字开头
     - 语法
-```
-import module_name
-module_name.function_name
-module_name.class_name
-```
-    - 见 操作练习 p01
+    ```
+    import module_name
+    module_name.function_name
+    module_name.class_name
+    ```
+    - 见 操作练习 p01???怎么也变黑了？？？？
 
 
 
