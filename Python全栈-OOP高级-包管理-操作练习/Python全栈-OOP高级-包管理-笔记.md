@@ -12,15 +12,36 @@
         - 测试代码
 - 如何使用模块
     - 直接导入模块使用
-        - 加入模块名称直接以数字开头
-    - 语法
-    ```
+        - 假如模块名称直接以数字开头，需要借助importlib帮助
+    - 语法一
+        - 案例01，02，p01，p02
+    ```python
     import module_name
     module_name.function_name
     module_name.class_name
     ```
-    - 见 操作练习 p01???怎么也变黑了？？？？
+    - 语法二
+        - 导入的同时给模块起一个别名，其余用法跟第一种相同
+        - 案例p03
+    ```python
+    import 模块 as 别名
 
+    ```
+    - 语法三
+        - 此方法有选择性的导入
+        - 使用的时候可以直接使用导入的内容，不需要前缀
+        - 案例p04
+    ```python
+    form module_name import func_name,class_name
+    ```
+    - 语法四
+        - 无前缀，无法防止命名污染
+        - `*`代表所有
+        - 案例p05
+    ```python
+    from module_name import *
+    ```
+    - 见 操作练习
 
 
 
