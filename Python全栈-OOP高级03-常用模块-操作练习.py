@@ -92,23 +92,98 @@ for i in range(10):
     print(i)
     time.sleep(1)
 
+# 代码片段3
+# strftime：将时间元组转化为自定义的字符串格式
+# 把时间表示成，2018年3月26日 21：05
+t = time.localtime()
+ft = time.strftime("%Y年%m月%d日 %H:%M",t)
+print(ft)
 
+# 代码片段4
+import datetime
+# datetime常见属性
+# datetime.date：一个理想化的日期，提供year，month，day属性
+dt = datetime.date(2018,3,26)
+print(dt)
+print(dt.day)
+print(dt.year)
+print(dt.month)
 
+# datetime.time：提供一个理想化的时间，提供hour，minute，sec，microsec等内容
 
+# datetime.datetime：提供日期跟时间的组合
+from datetime import datetime
+# 常用类方法：
+# today：
+# now：
+# utcnow：
+# fromtimestamp：从时间戳中返回本地时间
+dt = datetime(2018,2,15)
+print(dt.today())
+print(dt.now())
+print(dt.fromtimestamp(time.time()))
 
+# datetime.timedelta：提供一个时间差，时间长度
+# 表示一个时间间隔
+from datetime import datetime,timedelta
+t1 = datetime.now()
+print(t1.strftime("%Y-%m-%d %H:%M:%S"))
+# td表示以小时的时间长度
+td = timedelta(hours = 1)
+# 当前时间加上时间间隔后，把得到的一个小时后的时间格式化输出
+print((t1+td).strftime("%Y-%m-%d %H:%M:%S"))
 
+# timeit：时间测量工具
+# 测量程序运行时间间隔试验
+def p():
+    time.sleep(3.6)
+t1 = time.time()
+p()
+print(time.time() - t1)
 
+# 生成列表两种方法的比较
+# 如果单纯比较生成一个列表的时间，可能很难实现
+import timeit
+c = '''
+sum = []
+for i in range(1000):
+    sum.append(i)
+'''
+# 利用timeit调用代码，执行十万次，查看运行时间
+t1 = timeit.timeit(stmt = "[i for i in range(1000)]",number = 100000)
+# 测量代码c执行十万次运行结果
+t2 = timeit.timeit(stmt = c,number = 100000)
+print(t1)
+print(t2)
 
+help(timeit.timeit)
 
+# timeit可以执行一个函数，来测量一个函数的执行时间
+def doIt():
+    num = 3
+    for i in range(num):
+        print("Repeat for {0}".format(i))
+# 执行函数，重复10次
+t = timeit.timeit(stmt = doIt,number = 10)
+print(t)
 
-
-
-
-
-
-
-
-
+s = '''
+def doIt(num):
+    for i in range(num):
+        print("Repeat for {0}".format(i))
+'''
+# 执行doIt（num）
+# setup负责把环境变量准备好
+# 实际相当于给timeit创造了一个小环境
+# 在创造小环境中，代码执行的顺序大致是
+'''
+def doIt(num):
+    …………
+num = 3
+doIt(num)
+'''
+t = timeit.timeit("doIt(num)",setup = s+"num = 3",number = 10)
+print(t)
 
 
 
