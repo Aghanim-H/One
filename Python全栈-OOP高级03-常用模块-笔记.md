@@ -95,6 +95,58 @@
 ## datetime模块
 - datetime提供日期和时间的运算和表示
 - 见 操作练习 代码片段4
+
+## datetime.datetime 模块
+- 提供比较好用的时间而已
+- 类定义
+    ```
+    class datetime.datetime(year, month, day[, hour
+          [, minute
+          [, second
+          [, microsecond
+          [, tzinfo]]]]])
+    # The year, month and day arguments are required.
+    MINYEAR <= year <= MAXYEAR
+    1 <= month <= 12
+    1 <= day <= n
+    0 <= hour < 24
+    0 <= minute < 60
+    0 <= second < 60
+    0 <= microsecond < 10**
+    ```
+- 类方法
+    ```
+    datetime.datetime 模块
+    提供比较好用的时间而已
+    类定义
+    
+     class datetime.datetime(year, month, day[, hour
+              [, minute
+              [, second
+              [, microsecond
+              [, tzinfo]]]]])
+    # The year, month and day arguments are required.
+    MINYEAR <= year <= MAXYEAR
+    1 <= month <= 12
+    1 <= day <= n
+    0 <= hour < 24
+    0 <= minute < 60
+    0 <= second < 60
+    0 <= microsecond < 10**
+    类方法
+    `
+    datetime.today(): 返回当前本地datetime.随着 tzinfo None. datetime.fromtimestamp(time.time()). datetime.now([tz]): 返回当前本地日期和时间, 如果可选参数tz为None或没有详细说明,这个方法会像today(). datetime.utcnow(): 返回当前的UTC日期和时间, 如果tzinfo None ,那么与now()类似. datetime.fromtimestamp(timestamp[, tz]): 根据时间戳返回本地的日期和时间.tz指定时区. datetime.utcfromtimestamp(timestamp): 根据时间戳返回 UTC datetime. datetime.fromordinal(ordinal): 根据Gregorian ordinal 返回datetime. datetime.combine(date, time): 根据date和time返回一个新的datetime. datetime.strptime(date_string, format): 根据date_string和format返回一个datetime.
+    
+    实例方法
+    
+    datetime.date(): 返回相同年月日的date对象. datetime.time(): 返回相同时分秒微秒的time对象. datetime.replace(kw): kw in [year, month, day, hour, minute, second, microsecond, tzinfo], 与date类似. 类属性
+    
+    datetime.min: datetime(MINYEAR, 1, 1). datetime.max: datetime(MAXYEAR, 12, 31, 23, 59, 59, 999999).
+    
+    实例属性(read-only)
+    
+    datetime.year: 1 至 9999 datetime.month: 1 至 12 datetime.day: 1 至 n datetime.hour: In range(24). 0 至 23 datetime.minute: In range(60). datetime.second: In range(60). datetime.microsecond: In range(1000000). `
+    ```
     
     
     
