@@ -189,6 +189,23 @@ print(t)
 from datetime import datetime as dt
 print(dt.now())
 
+# 代码片段6
+import os
+mydir = os.getcwd()
+print(mydir)
 
+# 代码片段7
+os.chdir('/Users/shan/PycharmProjects/ospractice')  # /Users/shan/PycharmProjects/ospractice
+mydir = os.getcwd()
+print(mydir)
+
+# 代码片段8
+ld = os.listdir()
+print(ld)
+
+# 代码片段9
+help(os.makedirs)
+rst = os.makedirs("dana")
+print(rst)
 
 

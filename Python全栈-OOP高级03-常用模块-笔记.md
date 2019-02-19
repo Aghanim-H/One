@@ -128,8 +128,35 @@
     datetime.year: 1 至 9999 datetime.month: 1 至 12 datetime.day: 1 至 n datetime.hour: In range(24). 0 至 23 datetime.minute: In range(60). datetime.second: In range(60). datetime.microsecond: In range(1000000). `
 - 见 操作练习 代码片段5
     
-    
-    
+# os操作系统相关
+- 跟操作系统相关，主要是文件操作
+- 与系统相关的操作，主要包含在三个模块里
+    - os：操作系统目录相关
+    - os.path：系统路径相关操作
+    - shutil：高级文件操作，目录树的操作，文件赋值、删除、移动
+- 路径
+    - 绝对路径：总是从根目录上开始
+    - 相对路径：基本以当前环境为开始的一个相对的地方
+## os模块
+- getcwd()：获取当前的工作目录
+    - 格式：os.getcwd()
+    - 返回值：当前工作目录的字符串
+    - 当前工作目录就是程序在进行文件相关操作，默认查找文件的目录
+    - 见 操作练习 代码片段6
+- chdir()：改变当前的工作目录
+    - change directory
+    - 格式：os.chdir(路径)
+    - 返回值：无
+    - 见 操作练习 代码片段7
+- listdir()：获取一个目录中所有子目录和文件的名称列表
+    - 格式：os.listdir(路径)
+    - 返回值：所有子目录和文件名称的列表
+    - 见 操作练习 代码片段8
+- makedirs()：递归创建文件夹
+    - 格式：os.makedirs(递归路径)
+    - 返回值：无
+    - 递归路径：多个文件夹层层包含的路径就是递归路径，例如 a/b/c……
+    - 见 操作练习 代码片段9
     
     
     
