@@ -185,6 +185,9 @@ doIt(num)
 t = timeit.timeit("doIt(num)",setup = s+"num = 3",number = 10)
 print(t)
 
+# 代码片段5
+from datetime import datetime as dt
+print(dt.now())
 
 
 
