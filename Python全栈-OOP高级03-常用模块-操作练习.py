@@ -195,12 +195,12 @@ mydir = os.getcwd()
 print(mydir)
 
 # 代码片段7
-os.chdir('/Users/shan/PycharmProjects/ospractice')  # /Users/shan/PycharmProjects/ospractice
+os.chdir('/Users/shan/PycharmProjects/ospractice')  # 创建了一个ospractice文件夹，路径：/Users/shan/PycharmProjects/ospractice
 mydir = os.getcwd()
 print(mydir)
 
 # 代码片段8
-ld = os.listdir()
+ld = os.listdir('/Users/shan/PycharmProjects/ospractice')
 print(ld)
 
 # 代码片段9
@@ -208,4 +208,11 @@ help(os.makedirs)
 rst = os.makedirs("dana")
 print(rst)
 
+# 代码片段10
+# ls是列出当前文件和文件夹的系统命令
+rst = os.system('ls')
+print(rst)
+# 在当前目录下创建一个dana.haha的文件
+rst = os.system('ls')
+print(rst)
 
