@@ -213,6 +213,50 @@ print(rst)
 rst = os.system('ls')
 print(rst)
 # 在当前目录下创建一个dana.haha的文件
-rst = os.system('ls')
+rst = os.system('touch dana.haha')
 print(rst)
+
+# 代码片段11
+rst = os.getenv('PATH')
+print(rst)
+
+# 代码片段12
+print(os.pardir)
+print(os.curdir)
+print(os.sep)
+print(os.linesep)
+
+# 在路径相关操作中，不要手动拼写地址，因为手动拼写的路径可能不具有移植性
+path = "/home/tlxy" + "/" + "dana"
+print(path)
+
+# linux操作系统的名称是posix
+print(os.name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

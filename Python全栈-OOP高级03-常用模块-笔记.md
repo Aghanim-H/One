@@ -160,10 +160,31 @@
 - system()：运行系统shell命令
     - 格式：os.system(系统命令)
     - 返回值：打开一个shell或终端界面
+    - 一般推荐使用subprocess代替
     - ls是列出当前文件和文件夹的系统命令
     - 见 操作练习 代码片段10
+- getenv()：获取指定的系统环境变量值
+    - 相应的还有putenv
+    - 格式：os.getenv('环境变量名')
+    - 返回值：指定环境变量名对应的值
+    - 见 操作练习 代码片段11
+- exit()：退出当前程序
+    - 格式：exit()
+    - 返回值：无
     
-    
+## 值部分
+- os.curdir：current dir，当前目录
+- os.pardir：parent dir，父目录
+- os.sep：当前系统的路径分隔符
+    - windows："\"
+    - linux："/"
+- os.linesep：当前系统的换行符号
+    - windows："\r\n"
+    - unix,linux,macos："\n"
+- os.name：当前系统名称
+    - windows：nt
+    - mac,unix,linux：posix
+- 见 操作练习 代码片段12
     
     
     
