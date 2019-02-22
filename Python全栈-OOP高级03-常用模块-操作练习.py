@@ -205,7 +205,7 @@ print(ld)
 
 # 代码片段9
 help(os.makedirs)
-rst = os.makedirs("dana")
+rst = os.makedirs("dana/ls")
 print(rst)
 
 # 代码片段10
@@ -233,7 +233,10 @@ print(path)
 # linux操作系统的名称是posix
 print(os.name)
 
-
+# 代码片段13
+import os.path as op
+absp = os.abdpath('.')
+print(absp)
 
 
 

@@ -186,6 +186,12 @@
     - mac,unix,linux：posix
 - 见 操作练习 代码片段12
     
+## os.path模块，跟路径相关的模块
+- abspath()：将路径转化为绝对路径
+    - abselute 绝对
+    - 格式：os.path.abspath('路径')
+    - 返回值：路径的绝对路径形式
+- 见 操作练习 代码片段13
     
     
     
