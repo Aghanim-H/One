@@ -235,6 +235,7 @@ print(os.name)
 
 # 代码片段13
 import os.path as op
+# linux中，点号'.'代表当前目录；双点'..'代表父目录
 absp = os.abdpath('.')
 print(absp)
 
