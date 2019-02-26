@@ -239,6 +239,9 @@ import os.path as op
 absp = os.abdpath('.')
 print(absp)
 
+# 代码片段14
+bn = op.basename("/home/tlxy")
+bn
 
 
 
