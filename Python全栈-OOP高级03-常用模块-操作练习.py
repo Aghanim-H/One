@@ -205,8 +205,10 @@ print(ld)
 
 # 代码片段9
 help(os.makedirs)
-rst = os.makedirs("dana/ls")
-print(rst)
+rst1 = os.makedirs("dana/ls")
+rst2 = os.makedirs("home/tlxy/dana.haha")
+print(rst1)
+print(rst2)
 
 # 代码片段10
 # ls是列出当前文件和文件夹的系统命令
@@ -241,8 +243,14 @@ print(absp)
 
 # 代码片段14
 bn = op.basename("/home/tlxy")
-bn
+print(bn)
+bn = op.basename("home/tlxy/dana.haha")
 
+# 代码片段15
+bd = "/home/tlxy"
+fn = "dana.haha"
+p = op.join(bd,fn)
+print(p)
 
 
 
