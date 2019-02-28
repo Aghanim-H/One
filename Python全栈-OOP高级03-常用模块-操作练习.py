@@ -252,6 +252,24 @@ fn = "dana.haha"
 p = op.join(bd,fn)
 print(p)
 
+# 代码片段16
+t = op.split("/home/tlxy/dana.haha")
+print(t)
+d,p = op.split("/hone/tlxy/dana.haha")
+print(d,p)
+
+# 代码片段17
+rst = op.isdir("/home/tlxy/dana.haha")
+rst
+
+# 代码片段18
+e = op.exists("/home/tlxy/haha")
+e
+
+# 代码片段19
+import shutil
+rst = shutil.copy("/home/tlxy/dana.haha","/home/tlxy/haha.haha")
+print(rst)
 
 
 
