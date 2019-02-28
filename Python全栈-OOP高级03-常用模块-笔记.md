@@ -226,13 +226,53 @@
 - copyfile()：将一个文件中的内容复制到另外一个文件当中
     - 格式：shutil.copyfile("源路径"，"目标路径")
     - 返回值：无
+    - 见 操作练习 代码片段20
+- move()：移动文件或者文件夹
+    - 格式：shuti.movie('源路径'，'目标路径')
+    - 返回值：无
+    - 见 操作练习 代码片段21
     
-    
-    
-    
-    
-    
-    
+# 归档和压缩
+- 归档：把多个文件或者文件夹合并到一个文件当中
+- 压缩：用算法把多个文件或者文件夹无损或者有损合并到一个文件当中
+- make_archive()：归档操作
+    - 格式：shutil.make_archive('归档之后的目录和文件名','后缀','需要归档的文件夹')
+    - 返回值：归档之后的地址
+    - 见 操作练习 代码片段22
+- unpack_archive()：解包操作
+    - 格式：shutil.unpack_archive('归档文件地址'，'解包之后的地址')
+    - 返回值：解包之后的地址
+## zip压缩包
+- 模块名称叫zipfile
+    - zipfile.ZipFile(file[,mode[,compression[,allowZip64]]])
+        - 见 操作练习 代码片段23
+    - ZipFile.getinfo(name):
+        - 获取zip文档内指定文件的信息。返回一个zipfile.ZipInfo对象，它包括文件的相信信息。
+        - 见 操作练习 代码片段24
+    - ZipFile.namelist()
+        - 获取zip文档内所有文件的名称列表。
+        - 见 操作练习 代码片段25
+    - ZipFile.extractall([path[,members[,pwd]]])
+        - 解压zip文档中的所有文件到当前目录。参数members的默认值为zip文档内的所有文件名称列表
+        - 见 操作练习 代码片段26
+# random
+- 随机数
+- 所有的随机模块都是伪随机
+- random()：获取0-1之间的随机小数
+    - 格式：random.random()
+    - 返回值：随机0-1之间的小数
+    - 见 操作练习 代码片段27
+- choice()：随机返回序列中的某个值
+    - 格式：random.choice(序列)
+    - 返回值：序列中的某个值
+    - 见 操作练习 代码片段28
+- shuffle()：随机打乱列表
+    - 格式：random.shuffle(列表)
+    - 返回值：打乱顺序之后的列表
+    - 见 操作练习 代码片段29
+- randint(a，b)：返回一个a到b之间的随机整数，包含a和b
+    - 格式：random.randint(a，b)
+    - 见 操作练习 代码片段30
     
     
     

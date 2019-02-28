@@ -271,17 +271,54 @@ import shutil
 rst = shutil.copy("/home/tlxy/dana.haha","/home/tlxy/haha.haha")
 print(rst)
 
+# 代码片段20
+rst = shutil.copyfile("dana.haha","haha.haha")
+print(rst)
 
+# 代码片段21
+rst = shutil.move("/home/tlxy/dana.haha","/hone/tlxy/dana")
+print(rst)
 
+# 代码片段22
+# 是想得到一个叫做tuling.me的归档文件
+help(shutil.make_archive)
+rst = shutil.make_archive("/home/tlxy/tuling","zip","/home/tlxy/dana")
 
+# 代码片段23
+# 创建一个ZipFile对象，表示一个zip文件。参数file表示文件的路径或类文件对象（file-like object)；参数mode
+zf = zipfile.ZipFile("/home/tlxy/tuling.zip")
 
+# 代码片段24
+rst = zf.getinfo("dana.haha")
+print(rst)
 
+# 代码片段25
+nl = zf.namelist()
+print(nl)
 
+# 代码片段26
+rst =zf.extractall("/home/tlxy/dana")
+print(rst)
 
+# 代码片段27
+print(random.random())
+# 作业：利用random函数，注意是函数，生成0-100直接的整数
 
+# 代码片段28
+l = [str(i) + "haha" for i in range(10)]
+print(l)
+rst = random.choice(l)
+print(rst)
 
+# 代码片段29
+l1 = [i for i in range(10)]
+print(l1)
+random.shuffle(l1)
+print(l1)
+help(random.shuffle)
 
-
+# 代码片段30
+print(random.randint(0,100))
 
 
 
