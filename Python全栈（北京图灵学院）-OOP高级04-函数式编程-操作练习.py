@@ -14,8 +14,11 @@ printA()
 stm = lambda x: 100 * x
 # 使用上跟函数调用一模一样
 stm(89)
+print(stm)
 stm2 = lambda x,y,z: x + y * 10 + z * 100
 stm2(4,5,6)
+print(stm2)
+# 怎么回事？打印出一个内存地址？
 
 # 代码片段3
 # 变量可以赋值
@@ -27,7 +30,16 @@ def funA():
 funB = funA
 funB()
 
-
+# 代码片段4
+# 高阶函数举例
+# funA是普通函数，返回一个传入数字的100倍数字
+def funA(n):
+    return n * 100
+# 再写一个函数，把传入参数乘以300倍，利用高阶函数
+def funB(n):
+    # 最终是想返回300n
+    return funA(n) * 3
+print(funB(9))
 
 
 
