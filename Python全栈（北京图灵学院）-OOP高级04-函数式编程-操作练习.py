@@ -13,11 +13,9 @@ printA()
 # 计算一个数字的100倍数
 stm = lambda x: 100 * x
 # 使用上跟函数调用一模一样
-stm(89)
-print(stm)
+print(stm(89))
 stm2 = lambda x,y,z: x + y * 10 + z * 100
-stm2(4,5,6)
-print(stm2)
+print(stm2(4,5,6))
 # 怎么回事？打印出一个内存地址？
 # 怎么无法输出结果 运行不起？？？
 
