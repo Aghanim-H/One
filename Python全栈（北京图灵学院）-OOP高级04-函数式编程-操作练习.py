@@ -97,17 +97,97 @@ print(type(rst))
 print(rst)
 print([i for i in rst])
 
+# 代码片段8
+# 排序的案例
+a = [234,22312,123,45,43,2,3,66723,34]
+al = sorted(a,reverse = True)
+print(al)
+# 排序案例2
+a = [-43,23,45,6,-23,2,-4345]
+# 按绝对值进行排序
+# abs是求绝对值的意思
+# 即按照绝对值的倒序排列
+al = sorted(a,key=abs,reverse=True)
+print(al)
 
+# sorted案例
+astr = ['dana','Danaa','wangxiaojing','jingjing','haha']
+str1 = sorted(astr)
+print(str1)
+str2 = sorted(astr,key=str.lower)
+print(str2)
 
+# 代码片段9
+# 定义一个普通函数
+def myF(a):
+    print('In myF')
+    return None
+a = myF(8)
+print(a)
+# 函数作为返回值返回，被返回的函数在函数体内定义
+def myF2():
+    def myF3():
+        print("In myF3")
+        return 3
+    return myF3
+# 使用上面定义
+# 调用myF2，返回一个函数myF3，赋值给f3
+f3 = myF2()
+print(type(f3))
+print(f3)
+f3()
 
+# 复杂一点的返回函数的例子
+# args：参数列表
+# 1、myF4定义函数，返回内部定义的函数myF5
+# 2、myF5使用了外部变量，这个变量是myF4的参数
+def myF4(*args):
+    def myF5():
+        rst = 0
+        for n in args:
+            rst += n
+        return rst
+    return myF5
+f5 = myF4(1,2,3,4,5,6,7,8,9,0)
+# f5的调用方式
+f5()
 
+f6 = myF4(10,20,30,40,50)
+# f5的调用方式
+f6()
 
+# 代码片段9
+# 闭包常见坑
+def count():
+    # 定义列表，列表里面存放的是定义的函数
+    fs = []
+    for i in range(1,4):
+        # 定义了一个函数f
+        # f是一个闭包结构
+        def f():
+            return i*i
+        fs.append(f)
+    return fs
+f1,f2,f3 = count()
+print(f1())
+print(f2())
+print(f3())
 
-
-
-
-
-
+# 代码片段10
+# 修改代码片段9的函数
+def count2():
+    def f(j):
+        def g():
+            return j*j
+        return g
+    fs = []
+    for i in range(1,4):
+        fs.append(f(i))
+    return fs
+f1,f2,f3 = count2()
+print(f1())
+print(f2())
+print(f3())
 
 
 
