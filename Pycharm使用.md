@@ -46,4 +46,9 @@
 大写变小写|<kbd>command</kbd> + <kbd>shift</kbd> + <kbd>U</kbd>
 使用网页搜索选中的字|<kbd>command</kbd> + <kbd>shift</kbd> + <kbd>L</kbd>
 替换|<kbd>Command</kbd> + <kbd>R</kbd>
+## 6、环境配置
+- numpy使用
+    - 问题一、ModuleNotFoundError: No module named 'numpy'
+        - 解决办法：
+            - Pycharm --> Preferences --> Project：XX --> Project Interpreter --> Project Interpreter：下拉框选择show all --> 点击左下角 + 号按钮 --> Virtualenv Environment --> Existing environment --> 点击OK --> 点击OK
 # 三、调试
