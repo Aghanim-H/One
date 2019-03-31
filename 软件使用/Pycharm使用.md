@@ -46,6 +46,7 @@
 大写变小写|<kbd>command</kbd> + <kbd>shift</kbd> + <kbd>U</kbd>
 使用网页搜索选中的字|<kbd>command</kbd> + <kbd>shift</kbd> + <kbd>L</kbd>
 替换|<kbd>Command</kbd> + <kbd>R</kbd>
+显示Tool Buttons|连按两下 <kbd>command</kbd>
 ## 6、环境配置
 - numpy使用
     - 问题一、ModuleNotFoundError: No module named 'numpy'
