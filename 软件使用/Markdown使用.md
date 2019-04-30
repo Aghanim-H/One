@@ -119,7 +119,12 @@ help(type)
 用`<kbd></kbd>`包含一个键盘名称即显示为键盘符号。
     样式示例：  
 <kbd>delete</kbd>
-    
+# 注脚
+用`[^1]`来表示一个注脚，里面的数字根据需要自行设定。点击注脚内容最后那个弯箭头可以跳转到注脚所在正文的位置。      
+    样式示例：
+    ![](https://github.com/Aghanim-H/Photo/blob/master/Markdown/Markdown%E6%B3%A8%E8%84%9A1.png)
+    ![](https://github.com/Aghanim-H/Photo/blob/master/Markdown/Markdown%E6%B3%A8%E8%84%9A2.png)
+        
 
 
 
