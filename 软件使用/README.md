@@ -49,5 +49,7 @@ Mac 上的~/Library 文件夹是默认为隐藏的。有时候就会用到这个
   - Package Control  There are no packages available for installation
   ![](../../Users/shan/Desktop/屏幕快照\ 2019-01-12\ 上午11.15.53.png)
     - 原因分析：官方提供的Package Control不能用
+    - Package Control.sublime-package 文件为空
     - Package Control: Error downloading channel. HTTP error 404 downloading https://packagecontrol.io/channel_v3.json.
       https://packagecontrol.io/channel_v3.json无法访问
+        - 解决办法：使用Cargo VPN 翻墙访问https://packagecontrol.io网站
