@@ -1,3 +1,4 @@
+[TOC]
 # 标题
 标题前面加`#`即可，注意`#`与标题之间要有一个空格字符。
 - `#` 一级标题
@@ -139,7 +140,8 @@ help(type)
     文尾显示：   
     ![](https://github.com/Aghanim-H/Photo/blob/master/Markdown/Markdown%E6%B3%A8%E8%84%9A2.png)
         
-
+# 生成目录
+用`[TOC]`添加到文章最前面，即可自动生成目录
 
 
 
