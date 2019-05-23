@@ -15,6 +15,8 @@
         - b：binary方式，二进制方式写入
         - t：文本方式打开
         - +：可读写
+    - 参考资料  
+        [Python open() 函数](https://www.runoob.com/python/python-func-open.html)
 - 见 操作练习 代码片段1
 ## with语句
 - with语言使用的技术是一种称为上下文管理协议的技术（ContextManagementProtocal）
