@@ -24,6 +24,7 @@
 ![1](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New.png)![2](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New_File.png)![3](https://raw.githubusercontent.com/Aghanim-H/Photo/master/Pycharm/Pycharm_New_File_.png)
 ## 4、上传修改后的文件至Github
 - 先点击commit 然后VCS --> Git --> Push
+- 出现提示框 git-credential-osxkeychain 输入Mac开机密码即可
 ## 5、快捷键
 功能|快捷键
 |:----:|:----:|
